@@ -1,40 +1,24 @@
 const id = document.getElementById('cpu');
-const rock = document.getElementById('rock');
-const paper = document.getElementById('paper');
-const scissors = document.getElementById('scissors');
-
-const choise = [];
-
-rock.addEventListener('click', function(e){
-    console.log('rock');
-    if(e.target.dataset.id==='1'){
-        console.log(true);
-        choise.push(1)
-    }else {
-        console.log(false);
-    }
-    
-})
-
-console.log(choise);
-
-paper.addEventListener('click', function(e){
-    console.log('paper')
-    choise = 2;
-    console.log(choise);
-})
-
-scissors.addEventListener('click', function(e){
-    console.log('scissors')
-    choise = 3;
-    console.log(choise);
-})
-
-console.log(choise);
+const container = document.querySelector('#container');
+const p_choise = document.querySelector('#p-choise');
 
 
-//const player = prompt("Enter your choice:");
- //   console.log("Jugador: " + player);
+
+    container.addEventListener('click', function(e){
+        console.log(e.target);
+        if(e.target.dataset.id === '1'){
+            p_choise.innerHTML = `<i class="fas fa-hand-paper"></i>`;
+        }
+        if(e.target.dataset.id === '2'){
+            p_choise.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
+        }
+        if(e.target.dataset.id === '3'){
+            p_choise.innerHTML = `<i class="fas fa-hand-rock"></i>`;
+        }
+        
+    })
+
+
 
 
 
@@ -70,12 +54,6 @@ computer();
 
 
 
-if (choise === 1) {
-    console.log("Verdadero");
-}else {
-    console.log("falso");
-}
-
 
 /*function computerPlay(playerSelection, computerSelection){
     console.log("Resultado Jugador: " + playerSelection);
@@ -83,7 +61,7 @@ if (choise === 1) {
 }
 
 
-computerPlay(player);*/
+computerPlay(playerSelection());*/
 
 
 
