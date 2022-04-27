@@ -4,11 +4,37 @@
     box-sizing: border-box;
 }
 
-h1 {
-    text-align: center;
+h1,
+h2 {
+    padding: 10px 0 10px 0;
 }
+
+#win {
+    font-size: 50px;
+    padding: 20px;
+}
+
 
 body {
     background-color: black;
     color: white;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fas {
+    color: white;
+}
+
+i {
+    border: 1px solid white;
+    padding: 10px;
+    margin: 3px;
+    cursor: pointer;
 }
