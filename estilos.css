@@ -28,8 +28,23 @@ body {
     align-items: center;
 }
 
+.container-results{
+    display: flex;
+    gap: 10px;
+}
+
+.conts{
+    width: 80px;
+    height: 80px;
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .fas {
     color: white;
+    font-size: 30px;
 }
 
 i {
