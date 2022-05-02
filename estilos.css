@@ -53,3 +53,27 @@ i {
     margin: 3px;
     cursor: pointer;
 }
+
+.containerWinner,
+.containerLooser {
+    width: 400px;
+    height: 80px;
+    border: 2px solid white;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*display: none;*/
+}
+
+#winner {
+    font-size: 50px;
+}
+
+#looser {
+    font-size: 50px;
+}
+
+.display{
+    display: none;
+}
