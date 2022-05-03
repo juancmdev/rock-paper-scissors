@@ -20,6 +20,7 @@ function datos(dato){
     //console.log(parseInt(dato));
     //console.log(datosPlayer);
     Resultado(datos);
+    //console.log(datos);
     resultPlayer(dato);
 }
 
@@ -72,6 +73,8 @@ function Resultado(dato){
         }, 2000)
     }
 
+    return Resultado;
+
 }
 
 
@@ -87,18 +90,20 @@ function resultPlayer(dato){
         player_container.innerHTML = `<i class="fas fa-hand-paper"></i>`;
         //datos(e.target.dataset.id)
         datosPlayer.push(dato);
-        saveDataPlayer(dato);
+        //saveDataPlayer(dato);
     }
     if(dato === 3){
         player_container.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
         //datos(e.target.dataset.id)
-        saveDataPlayer(dato);
+        //saveDataPlayer(dato);
     }
     if(dato === 1){
         player_container.innerHTML = `<i class="fas fa-hand-rock"></i>`;
         //datos(e.target.dataset.id)
-        saveDataPlayer(dato);
+        //saveDataPlayer(dato);
     }
+
+    
 }
 
 function resultCpu(datoCpu){
@@ -107,43 +112,37 @@ function resultCpu(datoCpu){
         cpu_container.innerHTML = `<i class="fas fa-hand-paper"></i>`;
 
         //datos(e.target.dataset.id)
-        saveDataCPU(datoCpu);
+        //saveDataCPU(datoCpu);
         
         
     }
     if(datoCpu === 3){
         cpu_container.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
         //datos(e.target.dataset.id)
-        saveDataCPU(datoCpu);
+        //saveDataCPU(datoCpu);
         
     }
     if(datoCpu === 1){
         cpu_container.innerHTML = `<i class="fas fa-hand-rock"></i>`;
         //datos(e.target.dataset.id)
-        saveDataCPU(datoCpu);
+        //saveDataCPU(datoCpu);
         
     }
 }
 
 
-/*function saveDataPlayer(datoPlayer){
-    console.log("saveDataPlayer: " + datoPlayer);
-    //return datoPlayer;
-    
-    
+
+/*function playRound(playerSelection, computerSelection) {
+    console.log("el resultado es: " + playerSelection);
 }
 
-function saveDataCPU(inCpu){
-    console.log("saveDataCpu: " + inCpu);
-    
-    
-}
+const playerSelection = resultPlayer(dato);
 
-
-function resultadoFinal(){
-
-}
+console.log(playRound(playerSelection));
 */
+
+
+
 
 
 
