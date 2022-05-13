@@ -59,18 +59,12 @@ function Resultado(dato){
                 if (randomNum == 1){
                     //console.log("CPU: Rock");
                     id.innerHTML =`<i class="fas fa-hand-rock"></i>`;
-                    console.log(randomNum);
-                    resultadoCpu(randomNum)
                 }else if (randomNum == 2){
                     //console.log("CPU: Paper");
                     id.innerHTML = `<i class="fas fa-hand-paper"></i>`;
-                    console.log(randomNum);
-                    resultadoCpu(randomNum)
                 } else if (randomNum == 3){
                     //console.log("CPU: Scissors");
                     id.innerHTML =`<i class="fas fa-hand-scissors"></i>`;
-                    console.log(randomNum);
-                    resultadoCpu(randomNum)
                 }
             }
             
@@ -97,31 +91,25 @@ function resultPlayer(dato){
         //datos(e.target.dataset.id)
         datosPlayer.push(dato);
         //saveDataPlayer(dato);
-        
     }
     if(dato === 3){
         player_container.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
         //datos(e.target.dataset.id)
         //saveDataPlayer(dato);
-        
     }
     if(dato === 1){
         player_container.innerHTML = `<i class="fas fa-hand-rock"></i>`;
         //datos(e.target.dataset.id)
         //saveDataPlayer(dato);
-        
     }
-    return dato
+
     
 }
-
-
 
 function resultCpu(datoCpu){
     //console.log("Dato CPU: " + datoCpu);
     if(datoCpu === 2){
         cpu_container.innerHTML = `<i class="fas fa-hand-paper"></i>`;
-        
 
         //datos(e.target.dataset.id)
         //saveDataCPU(datoCpu);
@@ -133,39 +121,25 @@ function resultCpu(datoCpu){
         //datos(e.target.dataset.id)
         //saveDataCPU(datoCpu);
         
-        
     }
     if(datoCpu === 1){
         cpu_container.innerHTML = `<i class="fas fa-hand-rock"></i>`;
         //datos(e.target.dataset.id)
         //saveDataCPU(datoCpu);
         
-        
-        
     }
 }
 
-function resultadoCpu(datoCpu) {
-    console.log("este si es: " + datoCpu)
-    //resultados(datoCpu)
-}/*
 
 
-function resultados(resultadoJugador, resultadoCpu) {
-    console.log("Resultado Jugador: " + resultadoJugador + "; " + "Resultado CPU: " + resultadoCpu);
-    if(resultadoJugador > resultadoCpu){
-        console.log("Gana Jugador");
-    }else  {
-        console.log("Gana CPU");
-    }
-}*/
+/*function playRound(playerSelection, computerSelection) {
+    console.log("el resultado es: " + playerSelection);
+}
 
+const playerSelection = resultPlayer(dato);
 
-console.log("Datos :" + resultPlayer());
-
-
-
-
+console.log(playRound(playerSelection));
+*/
 
 
 
