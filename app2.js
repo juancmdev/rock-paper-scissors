@@ -1,78 +1,155 @@
-const cpuChoise = document.getElementById('cpu');
-const container = document.querySelector('#container');
-const p_choise = document.querySelector('#p-choise');
-const player_container = document.querySelector('.player-container');
-const cpu_container = document.querySelector('#r');
-const winner = document.querySelector("#winner");
-const looser = document.querySelector("#looser");
-
-/*const saved = true;
-console.log(saved);
-saved = 1;
-console.log(saved);
-
-function suma(a, b){
-    return a+b;
-}
-
-console.log(suma(3, 5));
+const containerLogos = document.querySelector(".container-logos");
+const insertPchoice = document.querySelector("#insertPchoice");
+const pChoice = document.querySelector("#p-choise");
+const insertCpuChoice = document.querySelector("#insertCpuChoice");
+const playerResult = document.querySelector("#playerResult");
+const cpuResult = document.querySelector("#cpuResult");
+const cpuChoice = document.querySelector("#cpuChoice");
+const playerAdvise = document.querySelector("#playerAdvise");
+const cpuAdvise = document.querySelector("#cpuAdvise");
+const playerScore = document.querySelector("#playerScore");
+const cpuScore = document.querySelector("#cpuScore");
 
 
-const suma = function(a, b){
-    return a+b;
-}
+let playerChoice;
+let computerChoice;
+let result;
+let playerCount = 0;
+let cpuCount = 0;
 
-console.log(suma("Hola ", 5));
-
-function resultado(a){
-    return a;
-}
-saved = resultado("Hola");
-console.log(saved);
-
-saved = resultado("Hola Nuevamente");
-console.log(saved);*/
-
-//----------------------------------------------------------------------------
-
-let randomNum;
-console.log(randomNum);
-
-/*function obtenerNumAleatorio(min, max) {
-    return Math.floor(Math.random() * (max - min) ) + min;
-  }
-
-console.log(obtenerNumAleatorio(15, 5));*/
-
-const obtenerNumAleatorio = function (min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
-
-console.log(obtenerNumAleatorio(45, 155));
-
-randomNum = obtenerNumAleatorio(1, 3);
-console.log(randomNum);
-
-function pruebaIf(a){
-    if(a === 1){
-        return randomNum;
+containerLogos.addEventListener('click', function(e){
+    playerChoice = parseInt(e.target.dataset.id);
+    //console.log(playerChoice);
+    if(playerChoice === 1){
+        insertPchoice.innerText = "Rock";
+        pChoice.innerHTML = `<i class="fas fa-hand-rock"></i>`;
+        playerResult.innerHTML = `<i class="fas fa-hand-rock"></i>`;
     }
-    if(a === 2){
-        return randomNum;
+    if(playerChoice === 2){
+        insertPchoice.innerText = "Paper";
+        pChoice.innerHTML = `<i class="fas fa-hand-paper"></i>`;
+        playerResult.innerHTML = `<i class="fas fa-hand-paper"></i>`;
+
     }
-    if(a === 3){
-        return randomNum;
+    if(playerChoice === 3){
+        insertPchoice.innerText = "Scissors";
+        pChoice.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
+        playerResult.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
+
+    }
+    
+    randomCpuChoise();
+    getResults();
+})
+
+
+function randomCpuChoise(){
+    computerChoice = Math.floor(Math.random() * 3) + 1;
+    console.log(computerChoice);
+
+    if(computerChoice === 1){
+        insertCpuChoice.innerText = "Rock";
+        cpuChoice.innerHTML = `<i class="fas fa-hand-rock"></i>`;
+        cpuResult.innerHTML = `<i class="fas fa-hand-rock"></i>`;
+
+    }
+
+    if(computerChoice === 2){
+        insertCpuChoice.innerText = "Paper";
+        cpuChoice.innerHTML = `<i class="fas fa-hand-paper"></i>`;
+        cpuResult.innerHTML = `<i class="fas fa-hand-paper"></i>`;
+
+    }
+
+    if(computerChoice === 3){
+        insertCpuChoice.innerText = "Scissors";
+        cpuChoice.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
+        cpuResult.innerHTML = `<i class="fas fa-hand-scissors"></i>`;
+
+    }
+
+    
+}
+
+function getResults(){
+    if(playerChoice === computerChoice){
+        result = 'Its a draw!';
+        console.log(result);
+        playerAdvise.innerText ="Draw";
+        cpuAdvise.innerText = "Draw";
+        playerCount += 1;
+        cpuCount += 1;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+        console.log("Player Count: " + playerCount);
+        console.log("Cpu count: " + cpuCount);
+    }
+
+    if(playerChoice == 2 && computerChoice == 1){ //player: Paper , cpu: Rock
+        result = 'Player Win!';
+        console.log(result);
+        playerAdvise.innerText ="Win";
+        cpuAdvise.innerText = "Lose";
+        playerCount += 1;
+        cpuCount += 0;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+    }
+
+    if(playerChoice == 3 && computerChoice == 1){ //player: Scissors, cpu: Rock
+        result = 'Cpu Win!';
+        console.log(result);
+        playerAdvise.innerText ="Lose";
+        cpuAdvise.innerText = "Win";
+        playerCount += 0;
+        cpuCount += 1;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+    }
+    
+    if(playerChoice == 3 && computerChoice == 2){ //player: Scissors, cpu: Paper
+        result = 'Player Win!';
+        console.log(result);
+        playerAdvise.innerText ="Win";
+        cpuAdvise.innerText = "Lose";
+        playerCount += 1;
+        cpuCount += 0;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+    }
+
+    if(playerChoice == 1 && computerChoice == 2){ //player: Rock, cpu: Paper
+        result = 'Cpu Win!';
+        console.log(result);
+        playerAdvise.innerText ="Lose";
+        cpuAdvise.innerText = "Win";
+        playerCount += 0;
+        cpuCount += 1;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+    }
+
+    if(playerChoice == 1 && computerChoice == 3){ //player: Rock, cpu: Scissors
+        result = 'Player Win!';
+        console.log(result);
+        playerAdvise.innerText ="Win";
+        cpuAdvise.innerText = "Lose";
+        playerCount += 1;
+        cpuCount += 0;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
+    }
+
+    if(playerChoice == 2 && computerChoice == 3){ //player: Paper, cpu: Scissors
+        result = 'Cpu Win!';
+        console.log(result);
+        playerAdvise.innerText ="Lose";
+        cpuAdvise.innerText = "Win";
+        playerCount += 0;
+        cpuCount += 1;
+        playerScore.innerText = playerCount;
+        cpuScore.innerText = cpuCount;
     }
 }
 
 
-//console.log("RandomNum * 30 = " + pruebaIf(randomNum));
-randomNum = pruebaIf(randomNum);
-
-console.log("Nuevo random = " + randomNum);
-
-function resultadoFinal(a){
-    console.log("Este es el resultado final: " + a);
-}
-
-resultadoFinal(randomNum);

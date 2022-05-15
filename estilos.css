@@ -28,9 +28,23 @@ body {
     align-items: center;
 }
 
+.container-logos{
+    display: flex;
+}
+
+.containers{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .container-results{
     display: flex;
     gap: 10px;
+}
+
+.h2Score {
+    padding: 0;
 }
 
 .conts{
@@ -40,6 +54,35 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.score {
+    display: flex;
+    margin-top: 10px;
+    gap: 15px;
+   
+}
+
+.scoreText {
+    margin-top: 10px;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.scorePlayer,
+.scoreCpu {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pScore,
+.cpuScore{
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .fas {
@@ -77,3 +120,4 @@ i {
 .display{
     display: none;
 }
+

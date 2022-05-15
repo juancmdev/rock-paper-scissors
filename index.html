@@ -12,28 +12,66 @@
     <div class="container" id="container">
       
       <h1>Rock- Paper - Scissors Game</h1>
-      <h2>Choose your choise:</h2>
+      <h2>Choose your choice:</h2>
       <div class="container-logos">
-        <i class="fas fa-hand-rock" id="rock" data-id="1"></i>
-        <i class="fas fa-hand-paper" id="paper" data-id="2"></i>
-        <i class="fas fa-hand-scissors" id="scissors" data-id="3"></i>
+        <div class="containers">
+          <i class="fas fa-hand-rock" id="rock" data-id="1"></i>
+          <p>Rock</p>
+        </div>
+        <div class="containers">
+          <i class="fas fa-hand-paper" id="paper" data-id="2"></i>          
+          <p>Paper</p>
+        </div>
+        <div class="containers">
+          <i class="fas fa-hand-scissors" id="scissors" data-id="3"></i>
+          <p>Scissors</p>
+        </div>
       </div>
 
-      <h2>Your Choise:</h2>
+      <h2>Your Choice:</h2>
       <p id="p-choise"><i class="fas fa-user-secret"></i></p>
-      <h2>CPU decition:</h2>
-      <p id="cpu"><i class="fas fa-user-secret"></i></p>
+      <p id="insertPchoice"></p>
+
+      <h2>CPU choice:</h2>
+      <p id="cpuChoice"><i class="fas fa-user-secret"></i></p>
+      <p id="insertCpuChoice"></p>
 
       <h2>Result:</h2>
       <!--<i class="fas fa-hand-scissors"></i>-->
       <div class="container-results">
-        <div class="player-container conts">
+        <div class="player-container conts" id="playerResult">
 
         </div>
-        <div class="cpu-container conts" id="r">
+
+        <div class="cpu-container conts" id="cpuResult">
 
         </div>
       </div>
+
+      <div class="scoreText">
+        <div class="scoreTextPlayer">
+          <p class="pScore">Player Score</p>
+        </div>
+
+        <div class="scoreTextCpu">
+          <p class="cpuScore">Cpu Score</p>
+        </div>
+
+      </div>
+
+      
+      <div class="score">
+        <div class="scorePlayer conts">
+          <h2 class="h2Score" id="playerScore"></h2>
+          <p id="playerAdvise"></p>
+        </div>
+        <div class="scoreCpu conts">
+          <h2 class="h2Score" id="cpuScore"></h2>
+          <p id="cpuAdvise"></p>
+        </div>
+
+      </div>
+
       <div class="containerWinner">
         <div class="winner">
           <p id="winner" class="display">Player WIN!</p>
@@ -51,7 +89,6 @@
 
     </div>
     
-  <!--<script src="app.js"></script>--> 
-  <script src="app2.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
