@@ -9,9 +9,13 @@
     <script src="https://kit.fontawesome.com/b52527b063.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="container-attempts">
+      <h1>Rock- Paper - Scissors Game</h1>
+    </div>
     <div class="container" id="container">
       
-      <h1>Rock- Paper - Scissors Game</h1>
+      
+      <h1>Remaining attempts: <span>10</span></h1>
       <h2>Choose your choice:</h2>
       <div class="container-logos">
         <div class="containers">
@@ -74,15 +78,16 @@
 
       <div class="containerWinner">
         <div class="winner">
-          <p id="winner" class="display">Player WIN!</p>
-          <p id="looser" class="display">CPU WIN!</p>
+          <p id="finish"></p>
+          <p id="draw"></p>
+          <p id="winner"></p>
+          <p id="looser"></p>
         </div> 
       </div>
-      <!--<div class="containerLooser">
-        <div class="looser">
-          <p id="looser">CPU WIN!</p>
-        </div>
-      </div>-->
+      <div class="btn display">
+        <button class="reloadBtn ">Restart Game</button>
+      </div>
+     
       
   
       

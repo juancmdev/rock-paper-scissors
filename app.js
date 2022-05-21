@@ -9,6 +9,13 @@ const playerAdvise = document.querySelector("#playerAdvise");
 const cpuAdvise = document.querySelector("#cpuAdvise");
 const playerScore = document.querySelector("#playerScore");
 const cpuScore = document.querySelector("#cpuScore");
+const remaining = document.querySelector('span');
+const finish = document.querySelector('#finish');
+const draw = document.querySelector('#draw');
+const winner = document.querySelector('#winner');
+const looser = document.querySelector('#looser');
+const btn = document.querySelector('.btn');
+const reloadBtn = document.querySelector('.reloadBtn');
 
 
 let playerChoice;
@@ -16,6 +23,7 @@ let computerChoice;
 let result;
 let playerCount = 0;
 let cpuCount = 0;
+let remainingAttempts = 10;
 
 containerLogos.addEventListener('click', function(e){
     playerChoice = parseInt(e.target.dataset.id);
@@ -81,8 +89,10 @@ function getResults(){
         cpuCount += 1;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remaining.innerText = remainingAttempts - 1;
         console.log("Player Count: " + playerCount);
         console.log("Cpu count: " + cpuCount);
+        remainingAttempts -= 1;
     }
 
     if(playerChoice == 2 && computerChoice == 1){ //player: Paper , cpu: Rock
@@ -94,6 +104,8 @@ function getResults(){
         cpuCount += 0;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
 
     if(playerChoice == 3 && computerChoice == 1){ //player: Scissors, cpu: Rock
@@ -105,6 +117,8 @@ function getResults(){
         cpuCount += 1;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
     
     if(playerChoice == 3 && computerChoice == 2){ //player: Scissors, cpu: Paper
@@ -116,6 +130,8 @@ function getResults(){
         cpuCount += 0;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
 
     if(playerChoice == 1 && computerChoice == 2){ //player: Rock, cpu: Paper
@@ -127,6 +143,8 @@ function getResults(){
         cpuCount += 1;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
 
     if(playerChoice == 1 && computerChoice == 3){ //player: Rock, cpu: Scissors
@@ -138,6 +156,8 @@ function getResults(){
         cpuCount += 0;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
 
     if(playerChoice == 2 && computerChoice == 3){ //player: Paper, cpu: Scissors
@@ -149,7 +169,45 @@ function getResults(){
         cpuCount += 1;
         playerScore.innerText = playerCount;
         cpuScore.innerText = cpuCount;
+        remainingAttempts -= 1;
+
     }
+
+    remaining.innerText = remainingAttempts;
+
+    if (remainingAttempts === 0){
+        //remainingAttempts = 10;
+        //remaining.innerText= remainingAttempts;
+        finish.innerText = "Game over!";
+
+        if(remainingAttempts === 0){
+            btn.classList.remove('display');
+        }
+
+        if(playerCount > cpuCount){
+            winner.innerText = "You Win!"
+        }
+        if(playerCount < cpuCount){
+            looser.innerText = "CPU Win!"
+        }
+        if(playerCount === cpuCount){
+            draw.innerText = "It's a Draw!"
+        }
+
+        
+    }
+
+    reloadBtn.addEventListener('click', () =>{
+        window.location.reload();
+    })
+
+    if (remainingAttempts < 0){
+        remainingAttempts = 0;
+        remaining.innerText= remainingAttempts;
+        window.location.reload();
+    }
+    
+    
 }
 
 
